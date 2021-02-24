@@ -5,8 +5,8 @@ import { Switch, Route } from 'react-router-dom';
 const Router = () => {
   return (
     <Switch>
-      <Route to="/" component={GlobalFeed} exact />
-      <Route to="/articles/:slug" component={Articles} />
+      <Route path="/" component={GlobalFeed} exact />
+      <Route path="/articles/:slug" component={Articles} />
     </Switch>
   );
 };
