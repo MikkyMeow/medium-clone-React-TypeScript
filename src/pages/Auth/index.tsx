@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Auth = () => {
-  const handleSubmit = () => {
-    console.log('handleSubmit');
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('form is: ', login, password);
   };
 
   return (
@@ -30,6 +34,8 @@ const Auth = () => {
                     className="form-control form-control-lg"
                     autoComplete="username"
                     placeholder="Email"
+                    value={login}
+                    onChange={(e) => setLogin(e.target.value)}
                   />
                 </fieldset>
                 <fieldset className="form-group">
@@ -38,6 +44,8 @@ const Auth = () => {
                     className="form-control form-control-lg"
                     autoComplete="current-password"
                     placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </fieldset>
                 <button
