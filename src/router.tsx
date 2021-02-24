@@ -1,5 +1,5 @@
-import Articles from 'components/pages/Articles';
-import GlobalFeed from 'components/pages/GlobalFeed';
+import Articles from 'pages/Articles';
+import GlobalFeed from 'pages/GlobalFeed';
 import { Switch, Route } from 'react-router-dom';
 
 const Router = () => {
