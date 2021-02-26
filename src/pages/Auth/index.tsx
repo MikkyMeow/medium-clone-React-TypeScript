@@ -7,12 +7,23 @@ const Auth: React.FC = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // @ts-ignore
   const [{ response, isLoading, error }, doFetch] = useFetch('');
 
   console.log('fetch', response, isLoading, error);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    //@ts-ignore
+    doFetch({
+      method: 'post',
+      data: {
+        user: {
+          email: 'qq@qq.com',
+          password: '123',
+        },
+      },
+    });
     setIsSubmitting(true);
   };
 
