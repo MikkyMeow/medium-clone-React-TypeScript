@@ -1,11 +1,15 @@
 import axios from 'axios';
+import useFetch from 'hooks/useFetch';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Auth = () => {
+const Auth: React.FC = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [{ response, isLoading, error }, doFetch] = useFetch('');
+
+  console.log('fetch', response, isLoading, error);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
