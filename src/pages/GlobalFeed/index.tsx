@@ -3,7 +3,7 @@ import React from 'react';
 const GlobalFeed = () => {
   return (
     <div>
-      <h2>GlobalFeed</h2>
+      <h2>Global Feed</h2>
     </div>
   );
 };
